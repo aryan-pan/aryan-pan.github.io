@@ -1,27 +1,21 @@
 ---
 layout: default
 title: Album
-description: Browse a collection of photos and videos capturing Aryan's adventures and experiments.
+description: Photographs by Aryan Pandey — nature, rain, and the occasional lab bench.
 ---
 
-<section class="album-section">
-  <h2 data-aos="fade-down">Photo &amp; Video Album</h2>
-  <p style="text-align:center; margin-bottom:1rem; color:var(--muted-text);" data-aos="fade-up">A peek into my world — from rainy days to lab experiments.</p>
-  <div class="gallery">
-    <!-- Photo items -->
-    <div class="gallery-item" data-aos="zoom-in">
-      <img src="{{ '/assets/images/foggy_forest.jpg' | relative_url }}" alt="Foggy forest landscape">
-    </div>
-    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="50">
-      <img src="{{ '/assets/images/rain_drops.jpg' | relative_url }}" alt="Rain drops on window bar">
-    </div>
-    <!-- Placeholder for user to add more photos or embed videos -->
-    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-      <img src="{{ '/assets/images/foggy_forest.jpg' | relative_url }}" alt="Foggy forest landscape">
-    </div>
-    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
-      <img src="{{ '/assets/images/rain_drops.jpg' | relative_url }}" alt="Rain drops on window bar again">
-    </div>
+<section class="section wrap">
+  <div class="section-head reveal">
+    <h2>Album</h2>
+    <p class="muted">Nature, rain, and the occasional lab bench. Click any photo to enlarge.</p>
   </div>
-  <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:var(--muted-text);" data-aos="fade-up">Add your own photos or embed videos by placing files in the <code>assets/images</code> or <code>assets/videos</code> directories and updating this page accordingly.</p>
+  <div class="gallery reveal">
+    {% for photo in site.data.album.photos %}
+    <figure>
+      <img src="{{ photo.image | relative_url }}" alt="{{ photo.caption | default: 'Photograph' }}" loading="lazy">
+      {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  {% unless site.data.album.photos %}<p class="muted reveal">No photos yet.</p>{% endunless %}
 </section>

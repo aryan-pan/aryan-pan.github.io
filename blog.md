@@ -1,22 +1,26 @@
 ---
 layout: default
-title: Blog
-description: Read Aryan's thoughts on neuromorphic computing, technology, nature and more.
+title: Writing
+permalink: /blog/
+description: Writing by Aryan Pandey — notes on neuromorphic computing, hardware-efficient ML, and whatever else is on my mind.
 ---
 
-<section class="blog-section">
-  <h2 data-aos="fade-down">Blog</h2>
+<section class="section wrap">
+  <div class="section-head reveal">
+    <h2>Writing</h2>
+    <p class="muted">Notes on neuromorphic computing, hardware-efficient ML, and the occasional tangent.</p>
+  </div>
   <div class="post-list">
     {% for post in site.posts %}
-      <div class="post-card" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        <p class="post-meta">{{ post.date | date: "%B %d, %Y" }} • by {{ post.author | default: site.author }}</p>
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
-        <a class="read-more" href="{{ post.url | relative_url }}">Read more</a>
-      </div>
+      <a class="glass post-card reveal" href="{{ post.url | relative_url }}">
+        <h3>{{ post.title }}</h3>
+        <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+        <p class="muted">{{ post.description | default: post.excerpt | strip_html | truncate: 180 }}</p>
+        <span class="read-more">Read →</span>
+      </a>
     {% endfor %}
     {% if site.posts == empty %}
-      <p style="text-align:center; color:var(--muted-text);">No blog posts yet. Stay tuned!</p>
+      <p class="muted">No posts yet — stay tuned.</p>
     {% endif %}
   </div>
 </section>

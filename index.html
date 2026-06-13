@@ -1,36 +1,129 @@
 ---
 layout: default
-title: Home
-description: Welcome to Aryan's personal website — a rainy portal into neuromorphic computing and personal interests.
+title: Aryan Pandey
+description: Aryan Pandey — PhD student in neuromorphic computing at the University at Buffalo, working on hardware-efficient machine learning, spiking and weightless neural networks, and ML–hardware co-design.
 ---
 
-<!--
-  Home page for Aryan's personal site.  This page introduces the site
-  with a hero section and a set of highlight cards guiding visitors
-  toward key areas: About, Projects and Blog.  The latest blog post
-  excerpt is pulled dynamically using Jekyll's site.posts.
--->
+<!-- ============ HERO ============ -->
+<section class="hero wrap">
+  <div class="hero-inner" data-tilt="1">
+    <p class="eyebrow">PhD · University at Buffalo</p>
+    <h1>Aryan Pandey</h1>
+    <p class="lead">I work on hardware-efficient machine learning — spiking and weightless neural networks, and the hardware that runs them at low power. PhD student in neuromorphic computing, with a focus on ML–hardware co-design and in-memory computing.</p>
+    <div class="hero-actions">
+      <a class="btn btn--solid" href="#research">View research</a>
+      <a class="btn" href="{{ '/assets/resume.pdf' | relative_url }}" target="_blank" rel="noopener">Résumé</a>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#about" aria-label="Scroll down">scroll</a>
+</section>
 
-<section class="hero" data-aos="fade-in">
-  <div class="hero-content">
-    <h1>Hello, I'm Aryan</h1>
-    <p>I’m a PhD student at the University at Buffalo working on neuromorphic computing — brain‑inspired architectures that push the frontiers of AI. This is my personal space to share my research, projects, photos and thoughts.</p>
-    <a class="btn" href="{{ '/about' | relative_url }}">Learn more about me</a>
+<!-- ============ ABOUT ============ -->
+<section class="section wrap" id="about">
+  <div class="section-head reveal">
+    <h2>About</h2>
+  </div>
+  <div class="about-grid">
+    <div class="glass card reveal">
+      <p>I’m a PhD student in neuromorphic computing at the <strong>University at Buffalo</strong>, focused on hardware-efficient machine learning — spiking and weightless neural networks, ML–hardware co-design, and in-memory computing. The throughline of my work is making intelligence cheap to run: fewer MACs, lower power, architectures that fit the hardware.</p>
+      <p>Before the PhD I earned a B.S. in Computer Engineering at Buffalo and spent two years as a software engineer at Axon building large-scale cloud data infrastructure. Outside research I hike, play guitar, tinker with electronics, and take photographs.</p>
+    </div>
+    <div class="glass card reveal">
+      <ul class="about-list">
+        <li><strong>Education</strong> — Ph.D. Neuromorphic Computing, UB (2025–present) · B.S. Computer Engineering, UB</li>
+        <li><strong>Interests</strong> — Hardware-efficient ML, ML–hardware co-design, in-memory computing, emerging compute architectures</li>
+        <li><strong>Toolkit</strong> — PyTorch · CUDA · Triton · Norse · Verilog / Vivado · Cadence Virtuoso</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="highlights">
-  <h2>Explore</h2>
-  <div class="card-grid">
-    <div class="card" data-aos="fade-up">
-      <h3>About</h3>
-      <p>Read about my background, interests and experience as a researcher.</p>
-      <a class="btn" href="{{ '/about' | relative_url }}">About me</a>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="100">
-      <h3>Projects</h3>
-      <p>Discover the projects I’ve been working on.</p>
-      <a class="btn" href="{{ '/projects' | relative_url }}">View projects</a>
-    </div>
+<!-- ============ RESEARCH ============ -->
+<section class="section wrap" id="research">
+  <div class="section-head reveal">
+    <h2>Research</h2>
   </div>
+  <div class="grid grid-3">
+    <article class="glass card reveal">
+      <h3>Recurrent Differentiable Weightless Networks</h3>
+      <p class="muted">Added recurrence to weightless networks — a LUT-only family that replaces MACs with table lookups for far cheaper FPGA inference. 82.2% on Spiking Heidelberg Digits (vs. 67% feedforward) and 97.75% on N-MNIST; ran end-to-end on FPGA at 0.6 W via a PyTorch→Verilog export flow.</p>
+      <div class="tags"><span class="tag">PyTorch</span><span class="tag">Verilog</span><span class="tag">FPGA</span></div>
+    </article>
+    <article class="glass card reveal">
+      <h3>Hardware-Efficient RF Device Fingerprinting</h3>
+      <p class="muted">An SNN that fingerprints radios straight from raw IQ samples using biologically-inspired spatiotemporal receptive fields with LIF/LI dynamics. Matched a CNN baseline on 30-device LoRa classification (99% validation), with metric-learning embeddings hitting 0.98 AUC for open-set rogue detection.</p>
+      <div class="tags"><span class="tag">SNN</span><span class="tag">Norse</span><span class="tag">PyTorch</span></div>
+    </article>
+    <article class="glass card reveal">
+      <h3>Multi-Objective NAS for SNNs</h3>
+      <p class="muted">An LSTM-controller architecture search (REINFORCE) that trades off accuracy, spike sparsity, and temporal-coding quality (CV-ISI, Van Rossum distance). A gated reward avoids no-spike collapse; on Spiking Heidelberg Digits the controller converged decisively, beating random search under matched compute.</p>
+      <div class="tags"><span class="tag">RL</span><span class="tag">NAS</span><span class="tag">PyTorch</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section wrap" id="experience">
+  <div class="section-head reveal">
+    <h2>Experience</h2>
+  </div>
+  <div class="grid grid-2">
+    <article class="glass card reveal">
+      <h3>Research Software Engineering Fellow</h3>
+      <p class="post-meta">Princeton Neuroscience Institute · Jun – Aug 2026</p>
+      <p class="muted">Contributing to PsyNeuLink (open-source models of cognition). Building hierarchical Bayesian and neural-likelihood parameter estimation for simulator-based cognitive models, validated end-to-end on multi-subject drift-diffusion data.</p>
+    </article>
+    <article class="glass card reveal">
+      <h3>Teaching Assistant — VLSI, Architecture, Security</h3>
+      <p class="post-meta">University at Buffalo · Aug 2025 – present</p>
+      <p class="muted">Lead labs on CMOS standard-cell design and Cadence Virtuoso workflows (schematic → layout, parasitic extraction, DRC/LVS). Mentor teams through full-flow mixed-signal IC projects — DPLLs, TRNGs — from spec to tapeout.</p>
+    </article>
+    <article class="glass card reveal">
+      <h3>Software Engineer</h3>
+      <p class="post-meta">Axon · Jun 2022 – Apr 2024</p>
+      <p class="muted">Built large-scale archival and ingestion on Azure (Temporal, Blob Storage) — cut cloud storage spend by $1.5M/month at 250 PB scale. Shipped Scala microservices on Kubernetes with 99.99%+ availability.</p>
+    </article>
+    <article class="glass card reveal">
+      <h3>Education</h3>
+      <p class="post-meta">University at Buffalo</p>
+      <p class="muted">Ph.D. in Neuromorphic Computing (Jan 2025 – present). B.S. in Computer Engineering, GPA 3.7, Dean’s List (2018 – 2022).</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PHOTOGRAPHY ============ -->
+<section class="section wrap" id="photography">
+  <div class="section-head reveal">
+    <h2>Photography</h2>
+    <p class="muted">A few frames. <a href="{{ '/album' | relative_url }}">More in the album →</a></p>
+  </div>
+  <div class="gallery reveal">
+    {% for photo in site.data.album.photos limit:6 %}
+    <figure>
+      <img src="{{ photo.image | relative_url }}" alt="{{ photo.caption | default: 'Photograph' }}" loading="lazy">
+      {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ============ WRITING ============ -->
+<section class="section wrap" id="writing">
+  <div class="section-head reveal">
+    <h2>Writing</h2>
+  </div>
+  <div class="post-list">
+    {% for post in site.posts limit:3 %}
+      <a class="glass post-card reveal" href="{{ post.url | relative_url }}">
+        <h3>{{ post.title }}</h3>
+        <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+        <p class="muted">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+        <span class="read-more">Read →</span>
+      </a>
+    {% endfor %}
+    {% if site.posts == empty %}
+      <p class="muted">No posts yet.</p>
+    {% endif %}
+  </div>
+  <p class="reveal" style="margin-top:1.5rem;"><a class="btn" href="{{ '/blog/' | relative_url }}">All writing</a></p>
 </section>

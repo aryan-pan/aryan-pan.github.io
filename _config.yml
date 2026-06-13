@@ -4,18 +4,17 @@
 # centralise your site settings.
 
 # Basic information
-title: "Aryan's Personal Site"
-email: ""
-author: "Aryan"
+title: "Aryan Pandey"
+email: "me@aryanpan.de"
+author: "Aryan Pandey"
 description: >-
-  A multi‑faceted personal website built for both career and personal use.
-  Aryan is a researcher in neuromorphic computing who enjoys sharing
-  projects, writing, photos, and videos. This site is built with Jekyll
-  and designed to feel like you’re peering through a rainy window.
+  Aryan Pandey — neuromorphic computing PhD at the University at Buffalo,
+  and a nature photographer. Brain-inspired hardware, spiking neural
+  networks, and quiet rainy forests, behind a rainy window.
 
 # URL settings. Leave baseurl blank when deploying to the root of a GitHub Pages site.
 baseurl: ""
-url: ""
+url: "https://aryan-pan.github.io"
 
 # Build settings
 markdown: kramdown
@@ -39,3 +38,11 @@ defaults:
 
 # Plugins (none by default; can be extended later)
 plugins: []
+
+# Keep dev/prototype files out of the published build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - CMS-SETUP.md

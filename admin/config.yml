@@ -1,0 +1,49 @@
+backend:
+  name: github
+  repo: aryan-pan/aryan-pan.github.io
+  branch: main
+  # The OAuth relay (Cloudflare Worker). Replace with your worker URL after deploying.
+  # See CMS-SETUP.md for step-by-step instructions.
+  base_url: https://REPLACE-ME.workers.dev
+
+site_url: https://aryan-pan.github.io
+display_url: https://aryan-pan.github.io
+
+# Where uploaded images are stored, and how they're referenced on the site.
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: posts
+    label: "Blog posts"
+    label_singular: "Post"
+    description: "Write and publish posts to /blog."
+    folder: "_posts"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: yaml-frontmatter
+    preview_path: "blog/{{year}}/{{month}}/{{day}}/{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DD HH:mm:ss ZZ" }
+      - { label: "Description", name: "description", widget: "string", required: false, hint: "Short summary shown in listings and link previews." }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: gallery
+    label: "Photo album"
+    files:
+      - name: album
+        label: "Album photos"
+        file: "_data/album.yml"
+        description: "Add, caption, reorder, or remove photos in the album."
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            label_singular: "Photo"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }

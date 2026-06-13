@@ -2,18 +2,15 @@
 layout: default
 ---
 
-<!--
-  Layout for blog posts.  This file extends the default layout
-  and wraps post content with a dedicated header section.  The
-  default layout provides the navigation, rain effect and footer.
--->
-
-<article class="post">
-  <header class="post-header" data-aos="fade-down">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%B %d, %Y" }} • by {{ page.author | default: site.author }}</p>
-  </header>
-  <div class="post-content" data-aos="fade-up">
-    {{ content }}
-  </div>
-</article>
+<section class="section wrap">
+  <article class="post glass reveal">
+    <header class="post-header">
+      <p class="post-meta"><a href="{{ '/blog/' | relative_url }}">← Writing</a></p>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}{% if page.author %} · {{ page.author }}{% endif %}</p>
+    </header>
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </article>
+</section>
