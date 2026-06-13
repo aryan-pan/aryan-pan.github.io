@@ -14,7 +14,7 @@ description: >-
 
 # URL settings. Leave baseurl blank when deploying to the root of a GitHub Pages site.
 baseurl: ""
-url: "https://aryan-pan.github.io"
+url: "https://aryanpan.de"
 
 # Build settings
 markdown: kramdown
