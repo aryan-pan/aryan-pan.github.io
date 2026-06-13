@@ -2,9 +2,8 @@ backend:
   name: github
   repo: aryan-pan/aryan-pan.github.io
   branch: main
-  # The OAuth relay (Cloudflare Worker). Replace with your worker URL after deploying.
-  # See CMS-SETUP.md for step-by-step instructions.
-  base_url: https://REPLACE-ME.workers.dev
+  # The OAuth relay (Cloudflare Worker). See CMS-SETUP.md.
+  base_url: https://sveltia-cms-auth.aryanpan.workers.dev
 
 site_url: https://aryan-pan.github.io
 display_url: https://aryan-pan.github.io
