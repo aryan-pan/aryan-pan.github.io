@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Album
-description: Photographs by Aryan Pandey — nature, rain, and the occasional lab bench.
+description: Photographs by Aryan Pandey.
 ---
 
 <section class="section wrap">
   <div class="section-head reveal">
     <h2>Album</h2>
-    <p class="muted">Nature, rain, and the occasional lab bench. Click any photo to enlarge.</p>
+    <p class="muted">A collection of forest, weather, and city shots. Click any photo to enlarge.</p>
   </div>
   <div class="gallery reveal">
     {% for photo in site.data.album.photos %}

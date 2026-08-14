@@ -2,13 +2,13 @@
 layout: default
 title: Writing
 permalink: /blog/
-description: Writing by Aryan Pandey — notes on neuromorphic computing, hardware-efficient ML, and whatever else is on my mind.
+description: Writing by Aryan Pandey on neuromorphic computing, hardware-efficient ML, and whatever else is on my mind.
 ---
 
 <section class="section wrap">
   <div class="section-head reveal">
     <h2>Writing</h2>
-    <p class="muted">Notes on neuromorphic computing, hardware-efficient ML, and the occasional tangent.</p>
+    <p class="muted">Notes on neuromorphic computing, hardware-efficient ML, and whatever else I'm thinking about.</p>
   </div>
   <div class="post-list">
     {% for post in site.posts %}
