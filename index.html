@@ -46,18 +46,33 @@ description: Aryan Pandey — PhD student in neuromorphic computing at the Unive
   <div class="grid grid-3">
     <article class="glass card reveal">
       <h3>Recurrent Differentiable Weightless Networks</h3>
-      <p class="muted">Added recurrence to weightless networks — a LUT-only family that replaces MACs with table lookups for far cheaper FPGA inference. 82.2% on Spiking Heidelberg Digits (vs. 67% feedforward) and 97.75% on N-MNIST; ran end-to-end on FPGA at 0.6 W via a PyTorch→Verilog export flow.</p>
+      <p class="muted">Added recurrence to weightless networks — a LUT-only family that replaces MACs with table lookups, where each trained lookup table maps directly onto a physical FPGA LUT-6. 82.2% on Spiking Heidelberg Digits (vs. 67% feedforward) and 97.75% on N-MNIST; ran end-to-end on FPGA at 0.6 W via a PyTorch→Verilog export flow.</p>
       <div class="tags"><span class="tag">PyTorch</span><span class="tag">Verilog</span><span class="tag">FPGA</span></div>
     </article>
     <article class="glass card reveal">
       <h3>Hardware-Efficient RF Device Fingerprinting</h3>
-      <p class="muted">An SNN that fingerprints radios straight from raw IQ samples using biologically-inspired spatiotemporal receptive fields with LIF/LI dynamics. Matched a CNN baseline on 30-device LoRa classification (99% validation), with metric-learning embeddings hitting 0.98 AUC for open-set rogue detection.</p>
+      <p class="muted">An SNN that fingerprints radios straight from raw IQ samples using biologically-inspired spatiotemporal receptive fields with LIF/LI dynamics. Matched a CNN baseline on 30-device LoRa classification (99% validation), with metric-learning embeddings hitting 0.98 AUC and 92% cross-manufacturer generalization for open-set rogue detection.</p>
       <div class="tags"><span class="tag">SNN</span><span class="tag">Norse</span><span class="tag">PyTorch</span></div>
     </article>
     <article class="glass card reveal">
       <h3>Multi-Objective NAS for SNNs</h3>
       <p class="muted">An LSTM-controller architecture search (REINFORCE) that trades off accuracy, spike sparsity, and temporal-coding quality (CV-ISI, Van Rossum distance). A gated reward avoids no-spike collapse; on Spiking Heidelberg Digits the controller converged decisively, beating random search under matched compute.</p>
       <div class="tags"><span class="tag">RL</span><span class="tag">NAS</span><span class="tag">PyTorch</span></div>
+    </article>
+    <article class="glass card reveal">
+      <h3>CUDA Neural Network Optimization</h3>
+      <p class="muted">Extended Hugging Face training to cut unnecessary host–device transfers — keeping generated samples on-GPU and syncing only on mismatch for a ~20% end-to-end speedup. Overlapped H2D/D2H transfers with compute via pinned memory and multi-stream execution, profiling to close GPU-idle gaps.</p>
+      <div class="tags"><span class="tag">CUDA</span><span class="tag">Triton</span><span class="tag">PyTorch</span></div>
+    </article>
+    <article class="glass card reveal">
+      <h3>SRAM Physically Unclonable Function</h3>
+      <p class="muted">Designed a 6T-SRAM array exploiting charge-sharing and process variation for PUF-based cryptographic key generation, with transistor-level schematics and layouts in 45nm. Characterized bit stability and readout margins via Monte Carlo simulation and post-layout parasitic extraction.</p>
+      <div class="tags"><span class="tag">Cadence Virtuoso</span><span class="tag">SPICE</span><span class="tag">PUF</span></div>
+    </article>
+    <article class="glass card reveal">
+      <h3>ResearchShelf</h3>
+      <p class="muted">A self-hosted, multi-user research-paper platform with role-based team libraries, a browser-based PDF reader, and ingestion across Zotero, arXiv, Crossref, OpenAlex, and Unpaywall with full-text search. Published to PyPI with CI covering 29 test modules across 6 OS/Python configurations; exposes authenticated workflows to LLM agents via MCP.</p>
+      <div class="tags"><span class="tag">FastAPI</span><span class="tag">Vue 3</span><span class="tag">MCP</span></div>
     </article>
   </div>
 </section>
@@ -71,7 +86,7 @@ description: Aryan Pandey — PhD student in neuromorphic computing at the Unive
     <article class="glass card reveal">
       <h3>Research Software Engineering Fellow</h3>
       <p class="post-meta">Princeton Neuroscience Institute · Jun – Aug 2026</p>
-      <p class="muted">Contributing to PsyNeuLink (open-source models of cognition). Building hierarchical Bayesian and neural-likelihood parameter estimation for simulator-based cognitive models, validated end-to-end on multi-subject drift-diffusion data.</p>
+      <p class="muted">Built distributed-systems infrastructure for PsyNeuLink, an open-source cognitive-modeling library — a Dask backend that fits cognitive models across multi-node SLURM clusters with near-linear scaling to 128+ cores. Fixed a compilation bottleneck for a 5.1× end-to-end speedup and validated parameter recovery against an established Bayesian package (HSSM).</p>
     </article>
     <article class="glass card reveal">
       <h3>Teaching Assistant — VLSI, Architecture, Security</h3>
@@ -81,7 +96,17 @@ description: Aryan Pandey — PhD student in neuromorphic computing at the Unive
     <article class="glass card reveal">
       <h3>Software Engineer</h3>
       <p class="post-meta">Axon · Jun 2022 – Apr 2024</p>
-      <p class="muted">Built large-scale archival and ingestion on Azure (Temporal, Blob Storage) — cut cloud storage spend by $1.5M/month at 250 PB scale. Shipped Scala microservices on Kubernetes with 99.99%+ availability.</p>
+      <p class="muted">Built large-scale archival and ingestion on Azure (Temporal, Blob Storage) — cut cloud storage spend by $1.5M/month while scaling to 250 PB. Held on-call ownership at 99.99%+ availability and shipped Scala microservices with Grafana/Splunk observability across every production region.</p>
+    </article>
+    <article class="glass card reveal">
+      <h3>Teaching Assistant — Security, Computer Organization</h3>
+      <p class="post-meta">University at Buffalo · Aug 2020 – Dec 2021</p>
+      <p class="muted">Ran weekly recitations on CPU architecture, ALU implementation, and pipelining, and led exam review sessions. Covered secure design, cryptography, authentication, and OS/network security, with hands-on demonstrations of common vulnerabilities and countermeasures.</p>
+    </article>
+    <article class="glass card reveal">
+      <h3>Software Engineer — Research Internship</h3>
+      <p class="post-meta">University at Buffalo · Jan – Aug 2020</p>
+      <p class="muted">Built the C backend for a portable FASTQ/A DNA-analysis device, including an inotify-based watchdog that detected and routed new files into the pipeline asynchronously. Parallelized the pipeline with OpenMP across all cores for an 8× speedup over the single-threaded baseline.</p>
     </article>
     <article class="glass card reveal">
       <h3>Education</h3>
