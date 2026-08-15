@@ -8,7 +8,6 @@ description: Writing by Aryan Pandey on neuromorphic computing, hardware-efficie
 <section class="section wrap">
   <div class="section-head reveal">
     <h2>Writing</h2>
-    <p class="muted">Notes on neuromorphic computing, hardware-efficient ML, and whatever else I'm thinking about.</p>
   </div>
   <div class="post-list">
     {% for post in site.posts %}
