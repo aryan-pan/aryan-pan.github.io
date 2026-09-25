@@ -9,3 +9,7 @@ Gemfile
 Gemfile.lock
 .bundle/
 vendor/
+
+# RealmOS build output
+realm-os/realmd/build/
+realm-os/image/out/
