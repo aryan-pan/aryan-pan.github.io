@@ -141,3 +141,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 .example-badge{display:inline-block;align-self:flex-start;flex:none;width:fit-content;background:#f2eadb;color:#674715;border:1px solid #dfcca9;border-radius:4px;font-size:12px;font-weight:650;letter-spacing:.025em;padding:3px 8px;margin-right:8px;vertical-align:middle}.card-top{flex-wrap:wrap;gap:8px}.home-pathways h2{font-size:clamp(24px,2.3vw,32px)}
 
 .project-meta{justify-content:flex-start;align-items:center}
+
+.expertise-filter{padding:12px 0;border:0}.expertise-filter summary{font-size:14px;color:var(--blue)}.expertise-filter label{display:block;max-width:300px;margin-top:12px;font-size:14px}.expertise-filter select{display:block;width:100%;margin-top:6px;padding:10px;border:1px solid var(--line);border-radius:4px}
+
+.card-top .card-theme{flex-basis:100%}
