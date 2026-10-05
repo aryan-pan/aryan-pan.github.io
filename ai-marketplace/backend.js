@@ -47,12 +47,12 @@ function nextStep(s,review=false){
  return 'This response has been withdrawn.';
 }
 function navigation(){
-  const nav=document.querySelector('nav');
-  if(currentUser?.isAdmin&&!nav.querySelector('[data-coordinator]'))nav.insertAdjacentHTML('beforeend','<a data-coordinator href="#/review">Coordinator</a>');
-  if(!currentUser?.isAdmin)nav.querySelector('[data-coordinator]')?.remove();
-  if(nav.querySelector('[data-account]'))nav.querySelector('[data-account]').textContent=currentUser?'Account':'Sign In';
-  if(!nav.querySelector('[data-account]'))nav.insertAdjacentHTML('beforeend',`<a data-account href="#/account">${currentUser?'Account':'Sign in'}</a>`);
+ const nav=document.querySelector('nav');nav.querySelector('[data-account-menu]')?.remove();nav.querySelector('[data-account]')?.remove();nav.querySelector('[data-coordinator]')?.remove();
+ if(!currentUser){nav.insertAdjacentHTML('beforeend','<a data-account href="#/account">Sign In</a>');return;}
+ nav.insertAdjacentHTML('beforeend',`<details class="account-menu" data-account-menu><summary>Account</summary><div class="account-menu-links"><span class="account-menu-name">${esc(currentUser.name)}</span>${link('/activity','My Activity','')}${link('/manage','My Listings','')}${link('/profile','My Profile','')}${link('/for-you','Recommended for Me','')}${currentUser.isAdmin?'<a data-coordinator href="#/review">Coordinator</a>':''}${link('/account','Account Settings','')}</div></details>`);
+ nav.querySelector('[data-account-menu]').addEventListener('click',e=>{if(e.target.closest('a'))nav.querySelector('[data-account-menu]').open=false;});
 }
+
 function accountPage(){
  if(currentUser)return heading('Account','Account',`Signed in as ${esc(currentUser.name)}.`)+`<div class="form-wrap">${link('/profile','Edit My Profile','button outline')} <button class="button" id="logout">Log out</button></div>`;
  return heading('Account','Sign in or create an account','Use a demo username and password to save drafts and submit responses.')+`<div class="account-grid"><form class="form-wrap account-form" id="login-form"><h2>Sign in</h2><div id="login-message"></div><div class="field"><label for="login-username">Username</label><input id="login-username" name="username" autocomplete="username" required></div><div class="field"><label for="login-password">Password</label><input id="login-password" name="password" type="password" autocomplete="current-password"></div><button class="button" type="submit">Sign in</button></form><form class="form-wrap account-form" id="register-form"><h2>Create account</h2><div id="register-message"></div><div class="field"><label for="register-username">Username</label><small>Use 2–64 letters, numbers, dots, hyphens or underscores.</small><input id="register-username" name="username" autocomplete="username" required></div><div class="field"><label for="register-name">Display name</label><input id="register-name" name="displayName" autocomplete="name"></div><div class="field"><label for="register-password">Password</label><small>A password is optional for this demo account.</small><input id="register-password" name="password" type="password" autocomplete="new-password"></div><button class="button" type="submit">Create account</button></form></div>`;
