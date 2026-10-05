@@ -54,13 +54,13 @@ function navigation(){
   if(!nav.querySelector('[data-account]'))nav.insertAdjacentHTML('beforeend',`<a data-account href="#/account">${currentUser?'Account':'Sign in'}</a>`);
 }
 function accountPage(){
- if(currentUser)return heading('Account','Account',`Signed in as ${esc(currentUser.name)}.`)+`<div class="form-wrap"><button class="button" id="logout">Log out</button></div>`;
+ if(currentUser)return heading('Account','Account',`Signed in as ${esc(currentUser.name)}.`)+`<div class="form-wrap">${link('/profile','Edit My Profile','button outline')} <button class="button" id="logout">Log out</button></div>`;
  return heading('Account','Sign in or create an account','Use a demo username and password to save drafts and submit responses.')+`<div class="account-grid"><form class="form-wrap account-form" id="login-form"><h2>Sign in</h2><div id="login-message"></div><div class="field"><label for="login-username">Username</label><input id="login-username" name="username" autocomplete="username" required></div><div class="field"><label for="login-password">Password</label><input id="login-password" name="password" type="password" autocomplete="current-password"></div><button class="button" type="submit">Sign in</button></form><form class="form-wrap account-form" id="register-form"><h2>Create account</h2><div id="register-message"></div><div class="field"><label for="register-username">Username</label><small>Use 2–64 letters, numbers, dots, hyphens or underscores.</small><input id="register-username" name="username" autocomplete="username" required></div><div class="field"><label for="register-name">Display name</label><input id="register-name" name="displayName" autocomplete="name"></div><div class="field"><label for="register-password">Password</label><small>A password is optional for this demo account.</small><input id="register-password" name="password" type="password" autocomplete="new-password"></div><button class="button" type="submit">Create account</button></form></div>`;
 }
 function bindAuth(){
  const login=document.querySelector('#login-form'),register=document.querySelector('#register-form'),logout=document.querySelector('#logout');
  if(logout)logout.onclick=async()=>{await api('/auth/logout',{method:'POST'});currentUser=null;draft={key:'',values:{}};personalActivity={submissions:[],memberships:[]};navigation();render(false);};
- for(const [form,path,target] of [[login,'/auth/login','#login-message'],[register,'/auth/register','#register-message']])if(form)form.onsubmit=e=>{e.preventDefault();withButton(form.querySelector('button'),async()=>{const result=await api(path,{method:'POST',body:Object.fromEntries(new FormData(form))});currentUser=result.user;draft={key:'',values:{}};await refreshPersonalActivity();navigation();const returnTo=getRoute().params.get('returnTo');go(returnTo?.startsWith('/participate')?returnTo:'/');},target)};
+ for(const [form,path,target] of [[login,'/auth/login','#login-message'],[register,'/auth/register','#register-message']])if(form)form.onsubmit=e=>{e.preventDefault();withButton(form.querySelector('button'),async()=>{const result=await api(path,{method:'POST',body:Object.fromEntries(new FormData(form))});currentUser=result.user;draft={key:'',values:{}};await refreshPersonalActivity();navigation();const returnTo=getRoute().params.get('returnTo');go(returnTo?.startsWith('/')&&!returnTo.startsWith('//')?returnTo:'/');},target)};
 }
 const originalRender=render,originalReview=reviewForm;
 render=function(focus=true){
@@ -95,7 +95,7 @@ render=function(focus=true){
   }
   if(path.startsWith('/communities/')){const group=D.communities.find(x=>x.id===path.split('/')[2]);if(group)document.querySelector('.aside').insertAdjacentHTML('beforeend',`<p class="membership-count">${group.memberCount} ${group.memberCount===1?'member':'members'}</p>`);}
 };
-async function withButton(button,operation,target){button.disabled=true;const original=button.textContent;button.textContent='Saving…';try{await operation();}catch(error){const destination=document.querySelector(target);if(destination)destination.innerHTML=note(error.message,true);}finally{if(button.isConnected){button.disabled=false;button.textContent=original;}}}
+async function withButton(button,operation,target){button.disabled=true;const original=button.textContent;button.textContent=button.dataset.pendingLabel||'Saving…';try{await operation();}catch(error){const destination=document.querySelector(target);if(destination)destination.innerHTML=note(error.message,true);}finally{if(button.isConnected){button.disabled=false;button.textContent=original;}}}
 async function saveDraft(){
   const {params}=getRoute(),mode=params.get('mode'),record_id=params.get('id')||null;
   const current=draft;
