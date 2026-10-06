@@ -159,4 +159,5 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 .directory-actions{display:flex;justify-content:flex-end;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:20px}.public-comment{overflow-wrap:anywhere;min-width:0}
 .discussion-jump{display:block;border:0;background:none;padding:14px 0;text-align:left;color:var(--blue);font-weight:600}.workspace>section{margin-bottom:36px}.workspace>section>h2{margin-bottom:18px}.opportunity-layout .detail-body section>h3{font-size:17px;margin:20px 0 10px}.home-member-links{padding-bottom:48px}
 .workspace>.workspace-toolbar{justify-content:flex-start;gap:16px}.opportunity-layout .aside{position:static;align-self:start}
+.comment-byline .example-badge{margin-right:auto;font-size:11px;padding:2px 7px}.comment-like-count{font-size:13px;color:var(--muted)}
 @media(max-width:600px){.comment-replies{margin-left:6px;padding-left:10px}.comment-replies .comment-replies .comment-replies{margin-left:0;padding-left:4px}.comment-actions{flex-wrap:wrap;gap:16px}.directory-actions{justify-content:flex-start}}
