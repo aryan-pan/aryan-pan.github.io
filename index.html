@@ -1,15 +1,15 @@
 ---
 layout: default
 title: Aryan Pandey
-description: Aryan Pandey — M.S. student in Computer Science and Engineering at the University at Buffalo, working on hardware-efficient machine learning, spiking and weightless neural networks, and ML–hardware co-design, driven by a broader interest in how intelligence emerges and the computations that might underpin it.
+description: Aryan Pandey — graduate student in Computer Science and Engineering at the University at Buffalo, working on hardware-efficient machine learning, spiking and weightless neural networks, and ML–hardware co-design, driven by a broader interest in how intelligence emerges and the computations that might underpin it.
 ---
 
 <!-- ============ HERO ============ -->
 <section class="hero wrap">
   <div class="hero-inner" data-tilt="1">
-    <p class="eyebrow">M.S. Student · University at Buffalo</p>
+    <p class="eyebrow">Graduate Student · University at Buffalo</p>
     <h1>Aryan Pandey</h1>
-    <p class="lead">I work on hardware-efficient machine learning — spiking and weightless neural networks, and the hardware that runs them at low power. The bigger question behind it: how intelligence emerges, and what computations actually underpin it. M.S. student in Computer Science and Engineering, with a focus on ML–hardware co-design and in-memory computing.</p>
+    <p class="lead">I work on hardware-efficient machine learning — spiking and weightless neural networks, and the hardware that runs them at low power. The bigger question behind it: how intelligence emerges, and what computations actually underpin it. Graduate student in Computer Science and Engineering, with a focus on ML–hardware co-design and in-memory computing.</p>
     <div class="hero-actions">
       <a class="btn btn--solid" href="#research">View research</a>
       <a class="btn" href="{{ '/assets/resume.pdf' | relative_url }}" target="_blank" rel="noopener">Résumé</a>
@@ -25,7 +25,7 @@ description: Aryan Pandey — M.S. student in Computer Science and Engineering a
   </div>
   <div class="about-grid">
     <div class="glass card reveal">
-      <p>I’m an M.S. student in Computer Science and Engineering at the <strong>University at Buffalo</strong>, focused on hardware-efficient machine learning — spiking and weightless neural networks, ML–hardware co-design, and in-memory computing. Underneath the engineering is a question I keep coming back to: how intelligence emerges, and what computations might actually underpin it. The throughline of my work is making intelligence cheap to run: fewer MACs, lower power, architectures that fit the hardware.</p>
+      <p>I’m a graduate student in Computer Science and Engineering at the <strong>University at Buffalo</strong>, focused on hardware-efficient machine learning — spiking and weightless neural networks, ML–hardware co-design, and in-memory computing. Underneath the engineering is a question I keep coming back to: how intelligence emerges, and what computations might actually underpin it. The throughline of my work is making intelligence cheap to run: fewer MACs, lower power, architectures that fit the hardware.</p>
       <p>Before grad school I earned a B.S. in Computer Engineering at Buffalo and spent two years as a software engineer at Axon building large-scale cloud data infrastructure.</p>
     </div>
     <div class="glass card reveal">
@@ -64,10 +64,21 @@ description: Aryan Pandey — M.S. student in Computer Science and Engineering a
       <p class="muted">Designed a 6T-SRAM array exploiting charge-sharing and process variation for PUF-based cryptographic key generation, with transistor-level schematics and layouts in 45nm. Characterized bit stability and readout margins via Monte Carlo simulation and post-layout parasitic extraction.</p>
       <div class="tags"><span class="tag">Cadence Virtuoso</span><span class="tag">SPICE</span><span class="tag">PUF</span></div>
     </article>
+  </div>
+</section>
+
+<!-- ============ PAPERS & POSTERS ============ -->
+<section class="section wrap" id="papers">
+  <div class="section-head reveal">
+    <h2>Papers &amp; Posters</h2>
+  </div>
+  <div class="grid grid-2">
     <article class="glass card reveal">
-      <h3>ResearchShelf</h3>
-      <p class="muted">A self-hosted, multi-user research-paper platform with role-based team libraries, a browser-based PDF reader, and ingestion across Zotero, arXiv, Crossref, OpenAlex, and Unpaywall with full-text search. Published to PyPI with CI covering 29 test modules across 6 OS/Python configurations; exposes authenticated workflows to LLM agents via MCP.</p>
-      <div class="tags"><span class="tag">FastAPI</span><span class="tag">Vue 3</span><span class="tag">MCP</span><span class="tag">Claude Code</span></div>
+      <h3>Fitting Cognitive Simulators to People: Distributed and Hierarchical Parameter Estimation in PsyNeuLink</h3>
+      <p class="post-meta">Poster · USRSE 2026 · Oct 2026</p>
+      <p class="muted"><strong>Aryan Pandey</strong>, David Turner, Jonathan Cohen</p>
+      <p class="muted">Extensions to PsyNeuLink for fitting cognitive models to behavioral data: a Dask backend that spreads thousands of per-participant simulations across local processes or SLURM clusters, hierarchical fitting that shares information across participants while keeping individual differences, and learned neural likelihoods that make repeated evaluations cheaper.</p>
+      <p><a class="btn" href="https://doi.org/10.5281/zenodo.23402909" target="_blank" rel="noopener">View poster</a></p>
     </article>
   </div>
 </section>
@@ -79,9 +90,14 @@ description: Aryan Pandey — M.S. student in Computer Science and Engineering a
   </div>
   <div class="grid grid-2">
     <article class="glass card reveal">
+      <h3>Research Assistant</h3>
+      <p class="post-meta">Empire AI · Aug 2026 – present</p>
+      <p class="muted">Support Empire AI’s applied research agenda by finding high-impact problems in areas like housing and childcare, then prototyping, building, and evaluating AI systems meant for real-world use. Helped develop the UB AI Innovation Marketplace, a site that connects institutional challenges with responsible AI ideas, technical expertise, and communities of interest.</p>
+    </article>
+    <article class="glass card reveal">
       <h3>Research Software Engineering Fellow</h3>
       <p class="post-meta">Princeton Neuroscience Institute · Jun – Aug 2026</p>
-      <p class="muted">Built distributed-systems infrastructure for PsyNeuLink, an open-source cognitive-modeling library — a Dask backend that fits cognitive models across multi-node SLURM clusters with near-linear scaling to 128+ cores. Extended it to hierarchical multi-subject fitting, and validated parameter recovery against an established Bayesian package (HSSM) to confirm statistical correctness.</p>
+      <p class="muted">Built the distributed fitting backend for PsyNeuLink, an open-source cognitive-modeling library, so researchers can fit models across a SLURM cluster instead of one machine. It runs on Dask and scales close to linearly past 128 cores. Added hierarchical fitting with partial pooling and a neural likelihood option (Pyro, SBI) alongside KDE, and validated parameter recovery against HSSM.</p>
     </article>
     <article class="glass card reveal">
       <h3>Teaching Assistant — VLSI, Architecture, Security</h3>
@@ -111,6 +127,7 @@ description: Aryan Pandey — M.S. student in Computer Science and Engineering a
   </div>
 </section>
 
+{% comment %} Photography and Writing hidden for now; remove this comment wrapper to restore. {% endcomment %}{% comment %}
 <!-- ============ PHOTOGRAPHY ============ -->
 <section class="section wrap" id="photography">
   <div class="section-head reveal">
@@ -147,3 +164,4 @@ description: Aryan Pandey — M.S. student in Computer Science and Engineering a
   </div>
   <p class="reveal" style="margin-top:1.5rem;"><a class="btn" href="{{ '/blog/' | relative_url }}">All writing</a></p>
 </section>
+{% endcomment %}
