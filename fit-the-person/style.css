@@ -4,3 +4,5 @@
 @media(min-width:1250px){.workspace{grid-template-columns:290px minmax(0,1fr) 145px;gap:22px}.share-panel img{width:140px;height:140px}.controls{padding:25px}.slider-title label{font-size:14px}.control-intro,.slider-block p{font-size:12px}.step h2{font-size:15px}.prediction-row,.prediction-row strong{font-size:12px}.explanation-card p,#landscape-cover p{font-size:11px}}
 
 .offline-ready{font-size:9px;color:#abd7bd;white-space:nowrap}@media(max-width:700px){.offline-ready{font-size:8px}.header-right{gap:10px}}
+
+.intro h1{font-size:clamp(35px,3.8vw,58px);letter-spacing:-2px}.task-note{max-width:270px}.share-panel h2{font-family:inherit;font-style:normal;font-size:16px;font-weight:650;line-height:1.3}.result-title{font-family:inherit;font-style:normal;font-size:17px;font-weight:650}.brand{gap:0}@media(max-width:700px){.intro h1{font-size:38px}.task-note{max-width:none}.share-panel h2{font-size:17px}}
